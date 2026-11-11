@@ -1,0 +1,131 @@
+# Plantilla generada por 'holux-metric pick'.
+# 1) Completa real_distance_m (en metros) con la medida física de cada par de puntos.
+# 2) Deja role: calibrate en las que usarás para ajustar la escala y pon role: validate
+#    en las que reservas para comprobar la exactitud (no participan en el ajuste).
+# 3) Opcional: frame.floor_plane_id (p. ej. plane_001, requiere --planes), frame.x_axis y frame.origin_visual.
+site: site001
+references:
+- name: largo_pata_1
+  point_a:
+  - 6.172446250915527
+  - 0.7782101035118103
+  - 13.222434043884277
+  point_b:
+  - 3.5466561317443848
+  - 30.859846115112305
+  - 6.128358840942383
+  real_distance_m: 0.64
+  role: validate
+  distance_in_cloud_units: 31.018147943894903
+- name: largo_pata_2
+  point_a:
+  - 13.70895767211914
+  - 0.6553750038146973
+  - -6.240599155426025
+  point_b:
+  - 7.8889994621276855
+  - 29.906919479370117
+  - -3.3854362964630127
+  real_distance_m: 0.64
+  role: validate
+  distance_in_cloud_units: 29.961253690769443
+- name: largo_pata_3
+  point_a:
+  - -4.670302867889404
+  - 0.6530861258506775
+  - -13.376457214355469
+  point_b:
+  - -2.530003070831299
+  - 29.634546279907227
+  - -7.246665000915527
+  real_distance_m: 0.64
+  role: validate
+  distance_in_cloud_units: 29.69983616894887
+- name: largo_pata_4
+  point_a:
+  - -12.306196212768555
+  - 0.4005493223667145
+  - 5.735517978668213
+  point_b:
+  - -6.15130090713501
+  - 29.867246627807617
+  - 3.007751941680908
+  real_distance_m: 0.64
+  role: calibrate
+  distance_in_cloud_units: 30.22597713666722
+- name: interior_entre_patas_s1
+  point_a:
+  - -3.641385793685913
+  - 12.038604736328125
+  - -8.7848482131958
+  point_b:
+  - -8.065349578857422
+  - 11.115434646606445
+  - 3.7016754150390625
+  real_distance_m: 0.273
+  role: calibrate
+  distance_in_cloud_units: 13.279193157173868
+- name: interior_entre_patas_s2
+  point_a:
+  - 5.012006759643555
+  - 12.44754695892334
+  - 8.693089485168457
+  point_b:
+  - 9.876632690429688
+  - 12.404058456420898
+  - -3.3481595516204834
+  real_distance_m: 0.27
+  role: validate
+  distance_in_cloud_units: 12.986845462324457
+- name: interior_entre_patas_i1
+  point_a:
+  - -7.8657402992248535
+  - 10.840771675109863
+  - 4.666777610778809
+  point_b:
+  - 4.005080223083496
+  - 10.922408103942871
+  - 9.420193672180176
+  real_distance_m: 0.271
+  role: calibrate
+  distance_in_cloud_units: 12.78741602639713
+- name: interior_entre_patasi2
+  point_a:
+  - 9.542118072509766
+  - 10.795757293701172
+  - -4.861354827880859
+  point_b:
+  - -3.0345234870910645
+  - 7.975127696990967
+  - -11.439289093017578
+  real_distance_m: 0.282
+  role: validate
+  distance_in_cloud_units: 14.47055919572482
+- name: ancho_asiento
+  point_a:
+  - 11.952651977539062
+  - 31.55107879638672
+  - 3.6721816062927246
+  point_b:
+  - -5.438290596008301
+  - 31.20775032043457
+  - -3.5349535942077637
+  real_distance_m: 0.417
+  role: calibrate
+  distance_in_cloud_units: 18.828317923731664
+- name: puntas_respaldo
+  point_a:
+  - -13.665399551391602
+  - 49.82375717163086
+  - 0.08950545638799667
+  point_b:
+  - -9.323055267333984
+  - 49.57274627685547
+  - -10.464764595031738
+  real_distance_m: 0.26
+  role: validate
+  distance_in_cloud_units: 11.415409614590242
+frame:
+  floor_plane_id: null
+  x_axis: null
+  origin_visual: null

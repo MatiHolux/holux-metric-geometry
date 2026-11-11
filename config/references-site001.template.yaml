@@ -1,0 +1,28 @@
+# Referencias de calibración para Site 001 (ejemplo; reemplaza con tus puntos y medidas).
+# Los puntos están en las coordenadas de la nube visual (los obtienes con 'holux-metric pick').
+site: site001
+
+references:
+  - name: puerta_ancho
+    point_a: [0.0, 0.0, 0.0]
+    point_b: [1.0, 0.0, 0.0]
+    real_distance_m: 1.200       # medida física en metros
+    role: calibrate              # se usa para ajustar la escala
+
+  - name: pared_a_pared
+    point_a: [0.0, 0.0, 0.0]
+    point_b: [5.0, 0.0, 0.0]
+    real_distance_m: 6.000
+    role: calibrate
+
+  - name: altura_rack
+    point_a: [2.0, 1.0, 0.0]
+    point_b: [2.0, 1.0, 1.8]
+    real_distance_m: 2.200
+    role: validate               # NO se usa para ajustar: sirve para medir el error real
+
+# Opcional: define el sistema de coordenadas del Site
+frame:
+  floor_plane_id: null           # p. ej. plane_001 (requiere --planes output/o3d-1/planes.json)
+  x_axis: null                   # p. ej. {from: [x, y, z], to: [x, y, z]} a lo largo de una pared
+  origin_visual: null            # punto de la nube que será el origen XY (por defecto: mediana de la nube)

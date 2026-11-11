@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "holux-metric"
+version = "0.1.0"
+description = "HO-LUX Spatial: capa de geometría métrica sobre Open3D (O3D-1: inspección y limpieza)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "open3d>=0.17",
+    "numpy",
+    "pyyaml",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+holux-metric = "holux_metric.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

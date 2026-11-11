@@ -1,0 +1,48 @@
+# Configuración O3D-1 para Site 001.
+# Todos los parámetros del pipeline viven aquí; nada está fijo en el código.
+#
+# length_mode:
+#   relative -> las longitudes (voxel, radios, umbral de planos) se expresan como
+#               FRACCIÓN de la diagonal del bounding box de la nube de entrada.
+#               Recomendado mientras la nube NO esté en metros (reconstrucción visual).
+#   absolute -> las longitudes están en las unidades de la nube (útil cuando ya es métrica).
+
+algorithm_version: "o3d-1.0.0"
+seed: 42
+length_mode: relative
+
+downsample:
+  enabled: true
+  voxel_size: 0.001         # 0.1 % de la diagonal del bbox
+
+outlier:
+  selected: statistical      # statistical | radius  (se calculan ambos para comparar)
+  statistical:
+    nb_neighbors: 20
+    std_ratio: 2.0           # más bajo = filtra más agresivo
+  radius:
+    nb_points: 8
+    radius: 0.004             # 2 % de la diagonal
+
+normals:
+  radius: 0.004
+  max_nn: 30
+  orient: true               # orientar normals de forma consistente
+  orient_k: 15
+
+planes:
+  max_planes: 6
+  distance_threshold: 0.001  # grosor máximo del plano (RANSAC)
+  ransac_n: 3
+  num_iterations: 2000
+  min_points: 200            # mínimo de puntos para aceptar un plano
+
+qa:
+  max_removed_percent: 30.0  # warning si el filtro de outliers quita más que esto
+  min_output_points: 1000
+
+preview:
+  enabled: true
+  max_points: 150000
+  point_size: 0.5
+  dpi: 110
